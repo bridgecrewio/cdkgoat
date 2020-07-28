@@ -1,58 +1,84 @@
+# CdkGoat - Vulnerable AWS CDK Infrastructure
 
-# Welcome to your CDK Python project!
+[![Maintained by Bridgecrew.io](https://img.shields.io/badge/maintained%20by-bridgecrew.io-blueviolet)](https://bridge.dev/2WBms5Q)
 
-This is a blank project for Python development with CDK.
+CdkGoat is Bridgecrew's "Vulnerable by Design" AWS CDK repository.
+CdkGoat is a learning and training project that demonstrates how common configuration errors can find their way into production cloud environments.
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+It also shows how Bridgecrew can be used with the AWS CDK to provide CloudFormation template vulnerability scanning at build time, even though no CloudFormation templates exist in the source repository.
 
-This project is set up like a standard Python project.  The initialization
-process also creates a virtualenv within this project, stored under the .env
-directory.  To create the virtualenv it assumes that there is a `python3`
-(or `python` for Windows) executable in your path with access to the `venv`
-package. If for any reason the automatic creation of the virtualenv fails,
-you can create the virtualenv manually.
+## Table of Contents
 
-To manually create a virtualenv on MacOS and Linux:
 
+## Introduction
+
+CdkGoat was built to enable DevSecOps design and implement a sustainable misconfiguration prevention strategy. It can be used to test a policy-as-code framework like [Checkov](https://github.com/bridgecrewio/checkov/), inline-linters, or other code scanning methods executed at build / deploy time.
+
+CdkGoat follows the tradition of existing *Goat projects that provide a baseline training ground to practice implementing secure development best practices for cloud infrastructure.
+
+## Important notes
+
+* **Where to get help:** the [Bridgecrew Community Slack](https://codified-security.herokuapp.com/)
+
+Before you proceed please take a not of these warning:
+> :warning: CdkGoat creates intentionally vulnerable AWS resources into your account. **DO NOT deploy CdkGoat in a production environment or alongside any sensitive AWS resources.**
+
+## Requirements
+
+This project uses the following software versions, but older versions should generally work.
+
+* Python 3.8.4 with virtualenv
+* Node 14.5.0
+* NPM 6.14.5
+* AWS CLI v2, configured with credentials
+
+To prevent vulnerable infrastructure from arriving to production see: [checkov](https://github.com/bridgecrewio/checkov/), the open source static analysis tool for infrastructure as code.
+
+## Getting started
+
+### Installation
+Clone this repository. Then run the following commands:
+
+```bash
+npm install -g aws-cdk
+python -m venv .env
+source .env/bin/activate
+pip install -r requirements.txt
 ```
-$ python3 -m venv .env
+
+### Generate and scan a template
+
+Run the following commands to generate a CloudFormation template and scan it with the Bridgecrew CLI:
+
+```bash
+cdk synth
+bridgecrew -f cdk.out/cdkgoat.template.json
 ```
 
-After the init process completes and the virtualenv is created, you can use the following
-step to activate your virtualenv.
+### Deploy a CloudFormation stack
 
-```
-$ source .env/bin/activate
-```
+Run the following command to deploy the infrastructure into your AWS account. **Warning: This will create vulnerable resources. Deploy with care, and consider deleting the stack each time you finish your work.**
 
-If you are a Windows platform, you would activate the virtualenv like this:
-
-```
-% .env\Scripts\activate.bat
+```bash
+cdk deploy
 ```
 
-Once the virtualenv is activated, you can install the required dependencies.
+### Destroy a CloudFormation stack
 
-```
-$ pip install -r requirements.txt
-```
+Run the following command to destroy the stack and its resources. You can also delete the stack from the AWS Console.
 
-At this point you can now synthesize the CloudFormation template for this code.
-
-```
-$ cdk synth
+```bash
+cdk destroy
 ```
 
-To add additional dependencies, for example other CDK libraries, just add
-them to your `setup.py` file and rerun the `pip install -r requirements.txt`
-command.
+## Contributing
 
-## Useful commands
+Contribution is welcomed!
 
- * `cdk ls`          list all stacks in the app
- * `cdk synth`       emits the synthesized CloudFormation template
- * `cdk deploy`      deploy this stack to your default AWS account/region
- * `cdk diff`        compare deployed stack with current state
- * `cdk docs`        open CDK documentation
+We would love to hear about more ideas on how to find vulnerable infrastructure-as-code design patterns.
 
-Enjoy!
+## Support
+
+[Bridgecrew](https://bridge.dev/2WBms5Q) builds and maintains CdkGoat to encourage the adoption of policy-as-code.
+
+If you need direct support you can contact us at [info@bridgecrew.io](mailto:info@bridgecrew.io).
