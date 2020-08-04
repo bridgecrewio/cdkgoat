@@ -2,10 +2,10 @@
 
 from aws_cdk import core
 
-from cdkgoat.cdkgoat_stack import CdkgoatStack
+from cdkgoat.cdkgoat_stack import CdkGoatStack
 
 
 app = core.App()
-CdkgoatStack(app, "cdkgoat")
+CdkGoatStack(app, "cdkgoat")
 
 app.synth()

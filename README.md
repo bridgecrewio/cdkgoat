@@ -57,11 +57,13 @@ bridgecrew -f cdk.out/cdkgoat.template.json
 
 ### Deploy a CloudFormation stack
 
-Run the following command to deploy the infrastructure into your AWS account. **Warning: This will create vulnerable resources. Deploy with care, and consider deleting the stack each time you finish your work.**
+Run the following command to deploy the infrastructure into your AWS account. **Warning: This will create vulnerable resources. Deploy with care into a non-prod account, and consider deleting the stack each time you finish your work.** The best use of this capability is to compare these results to a [runtime scanner](https://bridgecrew.cloud).
 
 ```bash
 cdk deploy
 ```
+
+Note that you will probably need to change some resource names, especially S3 bucket names, to be unique.
 
 ### Destroy a CloudFormation stack
 
