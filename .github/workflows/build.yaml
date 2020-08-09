@@ -18,6 +18,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '12'
+      - uses: dschep/install-pipenv-action@v1
       - name: Update documentation
         run: |
           git config --local user.email "action@github.com"
@@ -30,12 +31,12 @@ jobs:
           new_tag=$(echo $latest_tag | awk -F. -v a="$1" -v b="$2" -v c="$3" '{printf("%d.%d.%d", $1+a, $2+b , $3+1)}')
           echo "new tag: $new_tag"
 
-          pip install -U bridgecrew
-          npm install -g aws-cdk
-          cdk init app --language python
-          cdk synth
+          pipenv install
 
-          cat .github/template.md > README.md && bridgecrew -d . -o github_failed_only -s >> README.md
+          npm install -g aws-cdk
+          pipenv run cdk synth
+
+          cat .github/template.md > README.md && bridgecrew -f cdk.out/bridgecrew-cdk.template.json -o github_failed_only -s >> README.md
           git add README.md  || echo "No changes to commit"
           git commit -m "update resource scan result doc" README.md || echo "No changes to commit"
           git push origin

@@ -1,0 +1,17 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+bridgecrew = "*"
+"aws-cdk.core" = "*"
+"aws-cdk.aws-s3" = "*"
+"aws-cdk.aws-ec2" = "*"
+"aws-cdk.aws_kms" = "*"
+"aws-cdk.aws_rds" = "*"
+
+[requires]
+python_version = "3.8"
