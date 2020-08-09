@@ -86,6 +86,24 @@ We would love to hear about more ideas on how to find vulnerable infrastructure-
 If you need direct support you can contact us at [info@bridgecrew.io](mailto:info@bridgecrew.io).
 
 ## Existing misconfigs (Auto-Generated)
-2020-08-09 06:29:10,661 [MainThread  ] [ERROR]  Template file not found: cdk.out/bridgecrew-cdk.template.json
-2020-08-09 06:29:10,661 [MainThread  ] [ERROR]  Template file not found: cdk.out/bridgecrew-cdk.template.json
-2020-08-09 06:29:10,662 [MainThread  ] [ERROR]  Template file not found: cdk.out/bridgecrew-cdk.template.json
+|    | check_id   | file                          | resource                            | check_name                                                        | guideline                                                           |
+|----|------------|-------------------------------|-------------------------------------|-------------------------------------------------------------------|---------------------------------------------------------------------|
+|  0 | CKV_AWS_20 | cdk.out/cdkgoat.template.json | AWS::S3::Bucket.mycdkbucketC801BBDD | Ensure the S3 bucket does not allow READ permissions to everyone  | https://docs.bridgecrew.io/docs/s3_1-acl-read-permissions-everyone  |
+|  1 | CKV_AWS_53 | cdk.out/cdkgoat.template.json | AWS::S3::Bucket.mycdkbucketC801BBDD | Ensure S3 bucket has block public ACLS enabled                    | https://docs.bridgecrew.io/docs/bc_aws_s3_19                        |
+|  2 | CKV_AWS_21 | cdk.out/cdkgoat.template.json | AWS::S3::Bucket.mycdkbucketC801BBDD | Ensure the S3 bucket has versioning enabled                       | https://docs.bridgecrew.io/docs/s3_16-enable-versioning             |
+|  3 | CKV_AWS_55 | cdk.out/cdkgoat.template.json | AWS::S3::Bucket.mycdkbucketC801BBDD | Ensure S3 bucket has ignore public ACLs enabled                   | https://docs.bridgecrew.io/docs/bc_aws_s3_21                        |
+|  4 | CKV_AWS_57 | cdk.out/cdkgoat.template.json | AWS::S3::Bucket.mycdkbucketC801BBDD | Ensure the S3 bucket does not allow WRITE permissions to everyone | https://docs.bridgecrew.io/docs/s3_2-acl-write-permissions-everyone |
+|  5 | CKV_AWS_56 | cdk.out/cdkgoat.template.json | AWS::S3::Bucket.mycdkbucketC801BBDD | Ensure S3 bucket has 'restrict_public_bucket' enabled             | https://docs.bridgecrew.io/docs/bc_aws_s3_22                        |
+|  6 | CKV_AWS_18 | cdk.out/cdkgoat.template.json | AWS::S3::Bucket.mycdkbucketC801BBDD | Ensure the S3 bucket has access logging enabled                   | https://docs.bridgecrew.io/docs/s3_13-enable-logging                |
+|  7 | CKV_AWS_54 | cdk.out/cdkgoat.template.json | AWS::S3::Bucket.mycdkbucketC801BBDD | Ensure S3 bucket has block public policy enabled                  | https://docs.bridgecrew.io/docs/bc_aws_s3_20                        |
+|  8 | CKV_AWS_19 | cdk.out/cdkgoat.template.json | AWS::S3::Bucket.mycdkbucketC801BBDD | Ensure the S3 bucket has server-side-encryption enabled           | https://docs.bridgecrew.io/docs/s3_14-data-encrypted-at-rest        |
+|  9 | CKV_AWS_3  | cdk.out/cdkgoat.template.json | AWS::EC2::Volume.vol100D23AE3       | Ensure all data stored in the EBS is securely encrypted           | https://docs.bridgecrew.io/docs/general_3-encrypt-eps-volume        |
+| 10 | CKV_AWS_24 | cdk.out/cdkgoat.template.json | AWS::EC2::SecurityGroup.sg15CEFF4E3 | Ensure no security groups allow ingress from 0.0.0.0:0 to port 22 | https://docs.bridgecrew.io/docs/networking_1-port-security          |
+| 11 | CKV_AWS_7  | cdk.out/cdkgoat.template.json | AWS::KMS::Key.kms1045C8EFE          | Ensure rotation for customer created CMKs is enabled              | https://docs.bridgecrew.io/docs/logging_8                           |
+| 12 | CKV_AWS_16 | cdk.out/cdkgoat.template.json | AWS::RDS::DBInstance.rds1E1302D19   | Ensure all data stored in the RDS is securely encrypted at rest   | https://docs.bridgecrew.io/docs/general_4                           |
+| 13 | CKV_AWS_17 | cdk.out/cdkgoat.template.json | AWS::RDS::DBInstance.rds1E1302D19   | Ensure all data stored in the RDS bucket is not public accessible | https://docs.bridgecrew.io/docs/public_2                            |
+
+
+---
+
+
