@@ -84,3 +84,8 @@ We would love to hear about more ideas on how to find vulnerable infrastructure-
 [Bridgecrew](https://bridge.dev/2WBms5Q) builds and maintains CdkGoat to encourage the adoption of policy-as-code.
 
 If you need direct support you can contact us at [info@bridgecrew.io](mailto:info@bridgecrew.io).
+
+## Existing misconfigs (Auto-Generated)
+2020-08-09 06:29:10,661 [MainThread  ] [ERROR]  Template file not found: cdk.out/bridgecrew-cdk.template.json
+2020-08-09 06:29:10,661 [MainThread  ] [ERROR]  Template file not found: cdk.out/bridgecrew-cdk.template.json
+2020-08-09 06:29:10,662 [MainThread  ] [ERROR]  Template file not found: cdk.out/bridgecrew-cdk.template.json
