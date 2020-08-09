@@ -73,6 +73,12 @@ Run the following command to destroy the stack and its resources. You can also d
 cdk destroy
 ```
 
+## Bridgecrew's IaC herd of goats
+
+* [CfnGoat](https://github.com/bridgecrewio/cfngoat) - Vulnerable by design Cloudformation template
+* [TerraGoat](https://github.com/bridgecrewio/terragoat) - Vulnerable by design Terraform stack
+* [CDKGoat](https://github.com/bridgecrewio/cdkgoat) - Vulnerable by design CDK application
+
 ## Contributing
 
 Contribution is welcomed!
