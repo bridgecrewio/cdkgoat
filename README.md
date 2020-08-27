@@ -1,6 +1,7 @@
 # CdkGoat - Vulnerable AWS CDK Infrastructure
 
 [![Maintained by Bridgecrew.io](https://img.shields.io/badge/maintained%20by-bridgecrew.io-blueviolet)](https://bridge.dev/2WBms5Q)
+[![slack-community](https://slack.bridgecrew.io/badge.svg)](https://slack.bridgecrew.io/?utm_source=github&utm_medium=organic_oss&utm_campaign=cdkgoat)
 
 CdkGoat is Bridgecrew's "Vulnerable by Design" AWS CDK repository.
 CdkGoat is a learning and training project that demonstrates how common configuration errors can find their way into production cloud environments.
