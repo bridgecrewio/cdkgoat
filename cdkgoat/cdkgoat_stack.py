@@ -32,10 +32,3 @@ class CdkGoatStack(core.Stack):
         sg.add_ingress_rule(Peer.any_ipv4(), Port.tcp(22))
 
         kms.Key(self, 'kms1')
-
-        rds.DatabaseInstance(self,
-                             'rds1',
-                             engine=rds.DatabaseInstanceEngine.postgres(version=PostgresEngineVersion.VER_12),
-                             master_username='root',
-                             vpc=vpc,
-                             vpc_placement=ec2.SubnetSelection(subnet_type=ec2.SubnetType.PUBLIC))
