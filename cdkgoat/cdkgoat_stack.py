@@ -4,7 +4,6 @@ from aws_cdk import core, \
     aws_kms as kms, \
     aws_rds as rds
 from aws_cdk.aws_ec2 import Peer, Port
-from aws_cdk.aws_rds import PostgresEngineVersion
 from aws_cdk.core import RemovalPolicy
 
 
