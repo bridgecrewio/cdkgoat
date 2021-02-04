@@ -1,8 +1,7 @@
 from aws_cdk import core, \
     aws_s3 as s3, \
     aws_ec2 as ec2, \
-    aws_kms as kms, \
-    aws_rds as rds
+    aws_kms as kms
 from aws_cdk.aws_ec2 import Peer, Port
 from aws_cdk.core import RemovalPolicy
 
