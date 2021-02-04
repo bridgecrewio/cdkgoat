@@ -26,9 +26,9 @@ Before you proceed please take a not of these warning:
 
 ## Requirements
 
-This project uses the following software versions. Note that different CDK versions are compatible with different Python versions. If you have an older Python version, try installing an older CDK package.
+This project uses the following software versions, but older versions should generally work.
 
-* Python 3.9 with virtualenv
+* Python 3.8.4 with virtualenv
 * Node 14.5.0
 * NPM 6.14.5
 * AWS CLI v2, configured with credentials
