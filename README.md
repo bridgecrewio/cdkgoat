@@ -1,7 +1,7 @@
 # CdkGoat - Vulnerable AWS CDK Infrastructure
 
 [![Maintained by Bridgecrew.io](https://img.shields.io/badge/maintained%20by-bridgecrew.io-blueviolet)](https://bridgecrew.io/?utm_source=github&utm_medium=organic_oss&utm_campaign=cdkgoat)
-[![slack-community](https://img.shields.io/badge/Slack-4A154B?style=plastic&logo=slack&logoColor=white)](https://slack.bridgecrew.io/)
+[![slack-community](https://slack.bridgecrew.io/badge.svg)](https://slack.bridgecrew.io/?utm_source=github&utm_medium=organic_oss&utm_campaign=cdkgoat)
 
 CdkGoat is Bridgecrew's "Vulnerable by Design" AWS CDK repository.
 CdkGoat is a learning and training project that demonstrates how common configuration errors can find their way into production cloud environments.
@@ -93,20 +93,29 @@ We would love to hear about more ideas on how to find vulnerable infrastructure-
 If you need direct support you can contact us at [info@bridgecrew.io](mailto:info@bridgecrew.io).
 
 ## Existing misconfigs (Auto-Generated)
-|    | check_id   | file                          | resource                            | check_name                                                        | guideline                                                           |
-|----|------------|-------------------------------|-------------------------------------|-------------------------------------------------------------------|---------------------------------------------------------------------|
-|  0 | CKV_AWS_53 | cdk.out/cdkgoat.template.json | AWS::S3::Bucket.mycdkbucketC801BBDD | Ensure S3 bucket has block public ACLS enabled                    | https://docs.bridgecrew.io/docs/bc_aws_s3_19                        |
-|  1 | CKV_AWS_56 | cdk.out/cdkgoat.template.json | AWS::S3::Bucket.mycdkbucketC801BBDD | Ensure S3 bucket has 'restrict_public_bucket' enabled             | https://docs.bridgecrew.io/docs/bc_aws_s3_22                        |
-|  2 | CKV_AWS_20 | cdk.out/cdkgoat.template.json | AWS::S3::Bucket.mycdkbucketC801BBDD | Ensure the S3 bucket does not allow READ permissions to everyone  | https://docs.bridgecrew.io/docs/s3_1-acl-read-permissions-everyone  |
-|  3 | CKV_AWS_19 | cdk.out/cdkgoat.template.json | AWS::S3::Bucket.mycdkbucketC801BBDD | Ensure the S3 bucket has server-side-encryption enabled           | https://docs.bridgecrew.io/docs/s3_14-data-encrypted-at-rest        |
-|  4 | CKV_AWS_57 | cdk.out/cdkgoat.template.json | AWS::S3::Bucket.mycdkbucketC801BBDD | Ensure the S3 bucket does not allow WRITE permissions to everyone | https://docs.bridgecrew.io/docs/s3_2-acl-write-permissions-everyone |
-|  5 | CKV_AWS_18 | cdk.out/cdkgoat.template.json | AWS::S3::Bucket.mycdkbucketC801BBDD | Ensure the S3 bucket has access logging enabled                   | https://docs.bridgecrew.io/docs/s3_13-enable-logging                |
-|  6 | CKV_AWS_21 | cdk.out/cdkgoat.template.json | AWS::S3::Bucket.mycdkbucketC801BBDD | Ensure the S3 bucket has versioning enabled                       | https://docs.bridgecrew.io/docs/s3_16-enable-versioning             |
-|  7 | CKV_AWS_55 | cdk.out/cdkgoat.template.json | AWS::S3::Bucket.mycdkbucketC801BBDD | Ensure S3 bucket has ignore public ACLs enabled                   | https://docs.bridgecrew.io/docs/bc_aws_s3_21                        |
-|  8 | CKV_AWS_54 | cdk.out/cdkgoat.template.json | AWS::S3::Bucket.mycdkbucketC801BBDD | Ensure S3 bucket has block public policy enabled                  | https://docs.bridgecrew.io/docs/bc_aws_s3_20                        |
-|  9 | CKV_AWS_3  | cdk.out/cdkgoat.template.json | AWS::EC2::Volume.vol100D23AE3       | Ensure all data stored in the EBS is securely encrypted           | https://docs.bridgecrew.io/docs/general_3-encrypt-eps-volume        |
-| 10 | CKV_AWS_24 | cdk.out/cdkgoat.template.json | AWS::EC2::SecurityGroup.sg15CEFF4E3 | Ensure no security groups allow ingress from 0.0.0.0:0 to port 22 | https://docs.bridgecrew.io/docs/networking_1-port-security          |
-| 11 | CKV_AWS_7  | cdk.out/cdkgoat.template.json | AWS::KMS::Key.kms1045C8EFE          | Ensure rotation for customer created CMKs is enabled              | https://docs.bridgecrew.io/docs/logging_8                           |
+|    | check_id   | file                           | resource                            | check_name                                                        | guideline                                                           |
+|----|------------|--------------------------------|-------------------------------------|-------------------------------------------------------------------|---------------------------------------------------------------------|
+|  0 | CKV_AWS_18 | /cdk.out/cdkgoat.template.json | AWS::S3::Bucket.mycdkbucketC801BBDD | Ensure the S3 bucket has access logging enabled                   | https://docs.bridgecrew.io/docs/s3_13-enable-logging                |
+|  1 | CKV_AWS_20 | /cdk.out/cdkgoat.template.json | AWS::S3::Bucket.mycdkbucketC801BBDD | Ensure the S3 bucket does not allow READ permissions to everyone  | https://docs.bridgecrew.io/docs/s3_1-acl-read-permissions-everyone  |
+|  2 | CKV_AWS_21 | /cdk.out/cdkgoat.template.json | AWS::S3::Bucket.mycdkbucketC801BBDD | Ensure the S3 bucket has versioning enabled                       | https://docs.bridgecrew.io/docs/s3_16-enable-versioning             |
+|  3 | CKV_AWS_53 | /cdk.out/cdkgoat.template.json | AWS::S3::Bucket.mycdkbucketC801BBDD | Ensure S3 bucket has block public ACLS enabled                    | https://docs.bridgecrew.io/docs/bc_aws_s3_19                        |
+|  4 | CKV_AWS_55 | /cdk.out/cdkgoat.template.json | AWS::S3::Bucket.mycdkbucketC801BBDD | Ensure S3 bucket has ignore public ACLs enabled                   | https://docs.bridgecrew.io/docs/bc_aws_s3_21                        |
+|  5 | CKV_AWS_19 | /cdk.out/cdkgoat.template.json | AWS::S3::Bucket.mycdkbucketC801BBDD | Ensure the S3 bucket has server-side-encryption enabled           | https://docs.bridgecrew.io/docs/s3_14-data-encrypted-at-rest        |
+|  6 | CKV_AWS_57 | /cdk.out/cdkgoat.template.json | AWS::S3::Bucket.mycdkbucketC801BBDD | Ensure the S3 bucket does not allow WRITE permissions to everyone | https://docs.bridgecrew.io/docs/s3_2-acl-write-permissions-everyone |
+|  7 | CKV_AWS_56 | /cdk.out/cdkgoat.template.json | AWS::S3::Bucket.mycdkbucketC801BBDD | Ensure S3 bucket has 'restrict_public_bucket' enabled             | https://docs.bridgecrew.io/docs/bc_aws_s3_22                        |
+|  8 | CKV_AWS_54 | /cdk.out/cdkgoat.template.json | AWS::S3::Bucket.mycdkbucketC801BBDD | Ensure S3 bucket has block public policy enabled                  | https://docs.bridgecrew.io/docs/bc_aws_s3_20                        |
+|  9 | CKV_AWS_3  | /cdk.out/cdkgoat.template.json | AWS::EC2::Volume.vol100D23AE3       | Ensure all data stored in the EBS is securely encrypted           | https://docs.bridgecrew.io/docs/general_3-encrypt-eps-volume        |
+| 10 | CKV_AWS_24 | /cdk.out/cdkgoat.template.json | AWS::EC2::SecurityGroup.sg15CEFF4E3 | Ensure no security groups allow ingress from 0.0.0.0:0 to port 22 | https://docs.bridgecrew.io/docs/networking_1-port-security          |
+| 11 | CKV_AWS_7  | /cdk.out/cdkgoat.template.json | AWS::KMS::Key.kms1045C8EFE          | Ensure rotation for customer created CMKs is enabled              | https://docs.bridgecrew.io/docs/logging_8                           |
+
+
+---
+
+
+|    | check_id     | file                           | resource                                 | check_name     | guideline                                     |
+|----|--------------|--------------------------------|------------------------------------------|----------------|-----------------------------------------------|
+|  0 | CKV_SECRET_2 | /cdk.out/cdkgoat.template.json | d105d6e6096177be6085e7d65fe2b50e94303048 | AWS Access Key | https://docs.bridgecrew.io/docs/git_secrets_2 |
+|  1 | CKV_SECRET_2 | /cdk.out/cdkgoat.template.json | 1be789d57b93b4368eb001346a983f6feea25a85 | AWS Access Key | https://docs.bridgecrew.io/docs/git_secrets_2 |
 
 
 ---
