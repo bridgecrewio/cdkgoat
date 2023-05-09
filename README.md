@@ -19,7 +19,7 @@ CdkGoat follows the tradition of existing *Goat projects that provide a baseline
 
 ## Important notes
 
-* **Where to get help:** the [Bridgecrew Community Slack](https://slack.bridgecrew.io/)
+* **Where to get help:** the [Codified Security Community Slack](https://codifiedsecurity.slack.com/)
 
 Before you proceed please take a not of these warning:
 > :warning: CdkGoat creates intentionally vulnerable AWS resources into your account. **DO NOT deploy CdkGoat in a production environment or alongside any sensitive AWS resources.**
